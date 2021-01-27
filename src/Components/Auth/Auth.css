@@ -68,6 +68,25 @@
   
   .auth-button-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     width: 55%;
+    
+  }
+
+  .auth-button-container button {
+    margin:0 10px;
+  }
+
+  @media (max-width: 700px) {
+    .auth-container {
+      box-sizing: border-box;
+      width: 100vw;
+      height: 100vh;
+      padding: 20vh 20px;
+    }
+    .auth-button-container {
+      width: 100%;
+      justify-content:center;
+    }
+    
   }

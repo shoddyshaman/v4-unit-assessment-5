@@ -43,3 +43,18 @@
     font-family: 'Open Sans','Courier New', Courier, monospace;
     font-size: 12px;
   }
+
+  @media (max-width: 400px){
+    .App {
+      padding-right: 10px !important;
+    }
+    .form {
+      width: 78% !important;
+    }
+    .form-main input {
+      max-width: 100%;
+    }
+    .form-img-prev {
+      height: 200px;
+    }
+  }

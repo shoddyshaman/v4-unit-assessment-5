@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updateUser } from '../../Redux/reducer';
 import axios from 'axios';
 import logo from './../../assets/helo_logo.png';
 import './Auth.css';
@@ -25,6 +27,8 @@ class Auth extends Component {
     axios.post('/api/auth/login', this.state)
       .then(res => {
         //code here
+        this.props.updateUser(res.data)
+        this.props.history.push('/dash');
       })
       .catch(err => {
         console.log(err)
@@ -36,6 +40,8 @@ class Auth extends Component {
     axios.post('/api/auth/register', this.state)
       .then(res => {
         //code here
+        this.props.updateUser(res.data)
+        this.props.history.push('/dash')
       })
       .catch(err => {
         console.log(err)
@@ -76,4 +82,4 @@ class Auth extends Component {
   }
 }
 
-export default Auth;
+export default connect(null,{ updateUser })(Auth);
